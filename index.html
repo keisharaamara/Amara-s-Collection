@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amara's Collection — Toko Barang Lucu & Unik</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="logo">✨</span>
+        <h1>Amara's Collection</h1>
+      </div>
+      <nav class="nav">
+        <a href="#produk">Produk</a>
+        <a href="#reaksi">Reaksi Pelanggan</a>
+        <a href="#tentang">Tentang</a>
+      </nav>
+      <button class="btn cart-button" id="openCart" aria-label="Buka Keranjang">
+        🛒 <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+        <h2>Barang aesthetic buat mood kamu naik! 💖</h2>
+        <p>Temukan casing, scrapbook, kalung, gelang, diary book, dan banyak koleksi lucu lainnya.
+        Warna ceria pink, kuning, dan putih untuk harimu yang lebih fun.</p>
+        <a href="#produk" class="btn btn-primary">Belanja Sekarang</a>
+      </div>
+      <div class="hero-art">
+        <!-- Simple SVG illustration -->
+        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0%" stop-color="#FFD166"/>
+              <stop offset="100%" stop-color="#FF9AA2"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="300" height="200" fill="url(#g1)" rx="18"/>
+          <circle cx="60" cy="70" r="28" fill="white" opacity="0.9"/>
+          <circle cx="120" cy="50" r="18" fill="white" opacity="0.9"/>
+          <rect x="180" y="40" width="90" height="120" rx="14" fill="#fff"/>
+          <rect x="195" y="55" width="60" height="90" rx="10" fill="#FFDEE2"/>
+          <circle cx="225" cy="155" r="6" fill="#FFD166"/>
+          <text x="18" y="185" font-family="Poppins" font-size="14" fill="#fff">Amara's Collection</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" id="produk">
+    <div class="controls">
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Cari produk lucu..."/>
+      </div>
+      <div class="filters" role="tablist" aria-label="Kategori Produk">
+        <button class="chip is-active" data-filter="semua" role="tab">Semua</button>
+        <button class="chip" data-filter="casing">Casing Aesthetic</button>
+        <button class="chip" data-filter="scrapbook">Buku Scrapbook</button>
+        <button class="chip" data-filter="kalung">Kalung</button>
+        <button class="chip" data-filter="gelang">Gelang</button>
+        <button class="chip" data-filter="diary">Diary Book</button>
+        <button class="chip" data-filter="lainnya">Lainnya</button>
+      </div>
+      <div class="sort">
+        <label for="sortSelect">Urutkan:</label>
+        <select id="sortSelect">
+          <option value="terbaru">Terbaru</option>
+          <option value="termurah">Harga Termurah</option>
+          <option value="termahal">Harga Termahal</option>
+          <option value="a-z">Nama A-Z</option>
+        </select>
+      </div>
+    </div>
+
+    <section class="grid" id="productGrid" aria-live="polite">
+      <!-- Cards rendered by JS -->
+    </section>
+
+    <section class="cta">
+      <button class="btn btn-checkout" id="checkoutTop">Checkout Sekarang</button>
+    </section>
+  </main>
+
+  <section class="section" id="reaksi">
+    <div class="container">
+      <h3 class="section-title">Reaksi Pelanggan</h3>
+      <div class="testimonials">
+        <article class="review">
+          <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
+          <p>“Casingnya gemes banget! Kualitasnya mantul, pengiriman cepat.”</p>
+          <span class="author">— Alya</span>
+        </article>
+        <article class="review">
+          <div class="stars" aria-label="Rating 5 dari 5">★★★★★</div>
+          <p>“Diary book-nya estetik, kertas tebal. Suka banget sama packagingnya.”</p>
+          <span class="author">— Naya</span>
+        </article>
+        <article class="review">
+          <div class="stars" aria-label="Rating 4 dari 5">★★★★☆</div>
+          <p>“Kalungnya lucu, cocok buat kado. Bakal repeat order!”</p>
+          <span class="author">— Dita</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tentang">
+    <div class="container about">
+      <h3 class="section-title">Tentang Toko</h3>
+      <p>Amara's Collection menghadirkan berbagai barang lucu dan unik dengan gaya kekinian. 
+      Fokus kami adalah kualitas, desain estetik, dan pelayanan yang ramah. Follow terus untuk koleksi baru tiap minggu!</p>
+      <div class="badges">
+        <span class="badge">Gratis Gift Wrapping</span>
+        <span class="badge">COD & Transfer</span>
+        <span class="badge">Garansi 7 Hari</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Amara's Collection — Made with 💛</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">📸</a>
+        <a href="#" aria-label="TikTok">🎵</a>
+        <a href="#" aria-label="WhatsApp">💬</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <aside class="cart" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h4>Keranjang</h4>
+      <button class="icon" id="closeCart" aria-label="Tutup Keranjang">✖</button>
+    </div>
+    <div class="cart-body" id="cartItems">
+      <!-- Items injected -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">Rp0</strong>
+      </div>
+      <button class="btn btn-checkout" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Checkout Modal -->
+  <dialog id="checkoutModal">
+    <form method="dialog" class="checkout-modal">
+      <h3>Checkout</h3>
+      <p>Masukkan data untuk melanjutkan pemesanan.</p>
+      <label>Nama
+        <input type="text" id="buyerName" placeholder="Nama lengkap" required>
+      </label>
+      <label>No. WhatsApp
+        <input type="tel" id="buyerPhone" placeholder="08xxxxxxxxxx" required>
+      </label>
+      <label>Alamat
+        <textarea id="buyerAddress" placeholder="Alamat lengkap" required></textarea>
+      </label>
+      <div class="cart-summary">
+        <h4>Ringkasan Belanja</h4>
+        <ul id="checkoutSummary"></ul>
+        <div class="sum-row">
+          <span>Total</span>
+          <strong id="checkoutTotal">Rp0</strong>
+        </div>
+      </div>
+      <menu>
+        <button value="cancel" class="btn btn-ghost">Batal</button>
+        <button id="submitOrder" class="btn btn-primary" value="default">Buat Pesanan</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
